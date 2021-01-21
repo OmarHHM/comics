@@ -1,17 +1,12 @@
 package com.albo.comics.model;
 
 import java.util.List;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-
-import org.springframework.data.annotation.Id;
 
 @Getter
 @Setter
@@ -19,11 +14,11 @@ import org.springframework.data.annotation.Id;
   chain =true,
   fluent=false
 )
-@Document(collection = "heroes")
+//@Document(collection = "heroes")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Heroe {
 
-  @Id
+  //@Id
   private Integer id;
   private String name;
   private String last_sync;

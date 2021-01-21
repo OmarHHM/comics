@@ -2,8 +2,6 @@ package com.albo.comics.model;
 
 import java.util.Arrays;
 
-import org.springframework.data.annotation.Id;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.Getter;
@@ -19,7 +17,7 @@ import lombok.experimental.Accessors;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CharacterModel {
 	
-	  @Id
+	 // @Id
 	  private Integer id;
 	  private String name;
 	  private String[] comics;
