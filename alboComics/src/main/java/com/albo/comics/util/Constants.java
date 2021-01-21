@@ -9,7 +9,7 @@ public class Constants {
 	public static final String COLORISTS="colorist";
 	public static final String DATA="data";
 	public static final String RESULTS="results";
-	public static final String IROMAN="iroman";
+	public static final String IROMAN="ironman";
 	public static final String CAPAMERICA="capamerica";
 
 }
