@@ -1,7 +1,7 @@
 #!/bin/bash
 echo 'Obteniendo los datos de escritores, editores y coloristas de Iron man...'
 
-response=$(curl -X GET --header 'Accept: application/json' 'http://localhost:8080/marvel/colaborators/iroman')
+response=$(curl -X GET --header 'Accept: application/json' 'http://localhost:8080/marvel/colaborators/ironman')
 echo $response
 
 echo -e "\n"
