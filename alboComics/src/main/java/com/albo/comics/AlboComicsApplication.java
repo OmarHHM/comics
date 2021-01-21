@@ -15,13 +15,20 @@ import com.albo.comicsconfig.SwaggerConfiguration;
 public class AlboComicsApplication  implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AlboComicsApplication.class, args);
+	  
+		SpringApplication
+		  .run(AlboComicsApplication.class,
+		       args);
+		
 	}
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	  
 		registry
 			.addResourceHandler("swagger-ui.html")
 			.addResourceLocations("classpath:/META-INF/resources/");
+		
 	}
+	
 }

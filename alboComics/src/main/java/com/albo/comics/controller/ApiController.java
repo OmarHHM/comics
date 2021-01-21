@@ -25,60 +25,112 @@ import io.swagger.annotations.ApiParam;
 @RequestMapping("/")
 @Api(tags = "Marvel SuperHeroes")
 public class ApiController {
-
 	
 	@Autowired
 	private OperationService operationService;    
 
-	
-	@RequestMapping(value={"characters/{name}"},method = RequestMethod.GET)
-    @ApiOperation(value = "Fetches lists of characters.", notes = "Fetches lists of comic characters related with superheroes (Iro Man and Captain America)." )
-    public ResponseEntity getCharacters(
-    		@ApiParam(value = "Parametrs valid: {"+Constants.IROMAN+", "+Constants.CAPAMERICA+"}") 
-    		@PathVariable String name ) {
-		var response= new Response();
-		Heroe result;
+	@RequestMapping(
+	  value  = {"characters/{name}"},
+	  method = RequestMethod.GET)
+  @ApiOperation(
+    value = "Fetches lists of characters.",
+    notes = "Fetches lists of comic characters related with superheroes (Iro Man and Captain America).")
+  public ResponseEntity getCharacters(@ApiParam(value = "Parametrs valid: {"+Constants.IROMAN+", "+Constants.CAPAMERICA+"}") 
+                                      @PathVariable String name ) {
+	  
+		final var response = new Response();
 		
-		if( !name.equals(Constants.IROMAN) && !name.equals(Constants.CAPAMERICA)) {
-			return ResponseEntity.badRequest().build();
+		if (!name.equals(Constants.IROMAN) &&
+		    !name.equals(Constants.CAPAMERICA)) {
+		  
+			return 
+			  ResponseEntity
+			    .badRequest()
+			    .build();
 		}
+		
 		try {
-			result=operationService.getCharacters(name);
-			result.setLast_sync(Util.getDatetime());
-			response.setHeroe(result);
+		  
+			final var result = operationService
+			                     .getCharacters(name)
+			                     .setLastSync(
+			                       Util.getDatetime());
 			
-		} catch (JsonProcessingException | InterruptedException | ExecutionException e) {
-			response.setCode("500");
-			response.setMessage("Falla en el servicio, consulte al administrador de sistemas.");
+			response
+		    .setHeroe(result);
+			
+		} catch (JsonProcessingException | 
+		         InterruptedException | 
+		         ExecutionException e) {
+		  
+			response
+		    .setCode("500")
+			  .setMessage("Falla en el servicio, consulte al administrador de sistemas.");
+			
 		} catch (ApiException e) {
-			return ResponseEntity.ok(e.getMessage());
-		}
-		return ResponseEntity.ok(response);
-	}	
-		
-	
-	@RequestMapping(value={"colaborators/{name}"},method = RequestMethod.GET)
-    @ApiOperation(value = "Fetches lists of editors,writers and colorists of comic.", notes = "Fetches lists of editors,writers and colorists of comic related with Iro Man or Captain America." )
-    public ResponseEntity getColaborators(
-    		@ApiParam(value = "Parametrs valid: {"+Constants.IROMAN+", "+Constants.CAPAMERICA+"}") 
-    		@PathVariable String name ) {
-		
-		if( !name.equals(Constants.IROMAN) && !name.equals(Constants.CAPAMERICA)) {
-			return ResponseEntity.badRequest().build();
+		  
+			return
+			  ResponseEntity
+			    .ok(e.getMessage());
+			
 		}
 		
-		var response= new Response();
-		Heroe result;
-		try {
-			result=operationService.getColaboratos(name);
-			result.setLast_sync(Util.getDatetime());
-			response.setHeroe(result);
-		} catch (JsonProcessingException | InterruptedException | ExecutionException e) {
-			response.setCode("500");
-			response.setMessage("Falla en el servicio, consulte al administrador de sistemas.");
-		} catch (ApiException e) {
-			return ResponseEntity.ok(e.getMessage());
-		}
-		return ResponseEntity.ok(response);
+		return
+		  ResponseEntity
+		    .ok(response);
+		
 	}
+	
+	@RequestMapping(
+	  value  = {"colaborators/{name}"},
+	  method = RequestMethod.GET)
+  @ApiOperation(
+    value = "Fetches lists of editors,writers and colorists of comic.",
+    notes = "Fetches lists of editors,writers and colorists of comic related with Iro Man or Captain America." )
+  public ResponseEntity getColaborators(@ApiParam(value = "Parametrs valid: {"+Constants.IROMAN+", "+Constants.CAPAMERICA+"}") 
+    		                                @PathVariable String name ) {
+		
+		if (!name.equals(Constants.IROMAN) &&
+		    !name.equals(Constants.CAPAMERICA)) {
+		  
+			return 
+			  ResponseEntity
+			    .badRequest()
+			    .build();
+			
+		}
+		
+		final var response = new Response();
+		
+		try {
+		  
+			final var result = operationService
+			                     .getCollaborators(name)
+			                     .setLastSync(Util.getDatetime());
+			
+			response
+			  .setHeroe(result);
+			
+		} catch (JsonProcessingException |
+		         InterruptedException |
+		         ExecutionException e) {
+		  
+			response
+			  .setCode("500")
+			  .setMessage("Falla en el servicio, consulte al administrador de sistemas.");
+			
+		} catch (ApiException e) {
+		  
+			return
+			  ResponseEntity
+			    .ok(e.getMessage());
+			
+		}
+		
+		return
+		  ResponseEntity
+		    .ok(response);
+		
+	}
+	
 }
