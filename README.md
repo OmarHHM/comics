@@ -15,5 +15,5 @@ API con conexión a Marvel para obtener información sobre  Irón Man y Capitán
       - ./assemble.sh      
  - Para probar el API abra una terminal linux o bash en windows e ingrese a la ruta /comics/alboComics y ejecute el archivo avengers.sh
       - ./avengers.sh
- - Puede visualizar y probar el servicio en la consola de swagger, ingrese ala URL http:suDominio.com/marvel/swagger-ui.html
+ - Una vez ejecutado los pasos anteriores y sin tener errores, puede visualizar y probar el servicio en la consola de swagger, ingrese ala URL http:suDominio.com/marvel/swagger-ui.html
  
