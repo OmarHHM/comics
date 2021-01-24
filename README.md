@@ -35,7 +35,7 @@ El API provee dos endpoints en el cual se podrá realizar la consulta de su supe
  ./stopServer.sh
  ```
  - Los logs de cada proyecto aparecen en la carpeta log correspondiente.
- ---
+ ```
   alboComics/log
   alboComicsScheduler/log
- ---
+ ```
