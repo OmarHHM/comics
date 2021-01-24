@@ -1,4 +1,4 @@
-package com.albo.comicsconfig;
+package com.albo.comics.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,8 @@ public class SwaggerConfiguration {
 		return 
 		  new Docket(DocumentationType.SWAGGER_2)
 		    .select()
-				.apis(RequestHandlerSelectors.basePackage("com.albo.comics.controller"))
+				.apis(RequestHandlerSelectors.
+				     basePackage("com.albo.comics.controller"))
 				.paths(regex("/.*"))
 				.build();
 		

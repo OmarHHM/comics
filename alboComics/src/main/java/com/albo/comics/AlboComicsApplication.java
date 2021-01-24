@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.albo.comicsconfig.SwaggerConfiguration;
+import com.albo.comics.config.SwaggerConfiguration;
 
 @SpringBootApplication
 @ComponentScan("com")

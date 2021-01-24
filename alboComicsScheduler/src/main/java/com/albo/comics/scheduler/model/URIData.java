@@ -1,4 +1,4 @@
-package com.albo.comics.model;
+package com.albo.comics.scheduler.model;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

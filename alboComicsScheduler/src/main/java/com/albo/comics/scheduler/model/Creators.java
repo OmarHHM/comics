@@ -1,4 +1,4 @@
-package com.albo.comics.model;
+package com.albo.comics.scheduler.model;
 
 import java.util.List;
 

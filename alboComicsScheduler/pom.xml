@@ -9,14 +9,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.albo</groupId>
-	<artifactId>alboComics</artifactId>
+	<artifactId>alboComicsScheduler</artifactId>
 	<version>1.0.0</version>
-	<name>alboComics</name>
-	<description>Albo comics API project</description>
+	<name>alboComicsScheduler</name>
+	<description>Albo comics Job project</description>
 	<properties>
 		<java.version>11</java.version>
 		<lombok.version>1.18.16</lombok.version>
-		<springfox.version>2.4.0</springfox.version>
 		<mongo.version>3.12.7</mongo.version>
 		<jackson.version>2.12.1</jackson.version>
 	</properties>
@@ -31,8 +30,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	
-		<dependency>
+		
+			<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
@@ -49,20 +48,6 @@
 				<version>${lombok.version}</version>
 				<scope>provided</scope>
 		</dependency>
-		
-		
-		<dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${springfox.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${springfox.version}</version>
-        </dependency>
-        
         
         <dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
@@ -70,9 +55,10 @@
 		    <version>${jackson.version}</version>
 		</dependency>
         
-        
-        
+		
+		
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>

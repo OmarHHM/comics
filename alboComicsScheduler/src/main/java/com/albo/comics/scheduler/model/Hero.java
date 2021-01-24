@@ -1,7 +1,10 @@
-package com.albo.comics.model;
+package com.albo.comics.scheduler.model;
 
 import java.util.Arrays;
 import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,7 +14,7 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
-* Domain for Heroe.
+* Domain for Hero.
 */
 @Getter
 @Setter
@@ -20,62 +23,64 @@ import lombok.experimental.Accessors;
   fluent=false
 )
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Heroe {
+@Document(collection = "heroes")
+public class Hero {
 
   /**
-   * Heroe's id.
+   * Hero's id.
    *
-   * @param id Heroe's id.
-   * @return Heroe's id.
+   * @param heroId Hero's id.
+   * @return Hero's id.
    */
-  private Integer id;
+  @Id
+  private Integer heroId;
   
   /**
-   * Heroe name.
+   * Hero name.
    *
-   * @param name Heroe name.
-   * @return Heroe name.
+   * @param name Hero name.
+   * @return Hero name.
    */
   private String name;
   
   /**
-   * Heroe lastSync.
+   * Hero lastSync.
    *
-   * @param lastSync Heroe lastSync.
-   * @return Heroe lastSync.
+   * @param lastSync Hero lastSync.
+   * @return Hero lastSync.
    */
   @JsonProperty("last_sync")
   private String lastSync;
   
   /**
-   * Heroe colorists.
+   * Hero colorists.
    *
-   * @param colorists Heroe colorists.
-   * @return Heroe colorists.
+   * @param colorists Hero colorists.
+   * @return Hero colorists.
    */
   private String[] colorists;
   
   /**
-   * Heroe writers.
+   * Hero writers.
    *
-   * @param writers Heroe writers.
-   * @return Heroe writers.
+   * @param writers Hero writers.
+   * @return Hero writers.
    */
   private String[] writers;
   
   /**
-   * Heroe editors.
+   * Hero editors.
    *
-   * @param writers Heroe editors.
-   * @return Heroe editors.
+   * @param writers Hero editors.
+   * @return Hero editors.
    */
   private String[] editors;
   
   /**
-   * Heroe characters.
+   * Hero characters.
    *
-   * @param writers Heroe characters.
-   * @return Heroe characters.
+   * @param writers Hero characters.
+   * @return Hero characters.
    */
   private List<CharacterModel> characters;
 
@@ -83,7 +88,7 @@ public class Heroe {
   public String toString() {
     
     return
-      "Heroe [id=" + id +
+      "Hero [id=" + heroId +
       ", name=" + name +
       ", lastSync=" + lastSync +
       ", colorists=" + Arrays.toString(colorists) +

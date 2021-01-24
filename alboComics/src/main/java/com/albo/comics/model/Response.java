@@ -37,13 +37,13 @@ public class Response {
 	private String message;
 	
 	/**
-   * Response heroe.
+   * Response hero.
    *
-   * @param heroe Response heroe.
-   * @return Response heroe.
+   * @param hero Response hero.
+   * @return Response hero.
    */
 	@JsonProperty("data")
-	private Heroe heroe;
+	private Hero hero;
 
   @Override
   public String toString() {
@@ -51,7 +51,7 @@ public class Response {
     return
       "Response [code=" + code +
       ", message=" + message + 
-      ", heroe=" + heroe + "]";
+      ", hero=" + hero + "]";
   }
 	
 }
