@@ -4,7 +4,7 @@ El API provee dos endpoints en el cual se podrá realizar la consulta de su supe
 - colaborators 
   - Nos provee la información de los editores, escritores y coloristas que actuaron en los comics donde aparece nuestro personaje (Iron Man, Capitan America).
 - characters
-  - Nos provee el nombre del personaje que se han relacionado con nuestro personaje principal (Iron Man , Capitan America), asi como los titulos de los comics en donde interactuaron.
+  - Nos provee los nombres de los personajes que se han relacionado con nuestro personaje principal (Iron Man , Capitan America), asi como los titulos de los comics en donde interactuaron.
 
 ## Requisitos
  - Java 11 o superior.
